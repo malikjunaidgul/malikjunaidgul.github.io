@@ -34,6 +34,22 @@
             color: white;
             padding: 40px;
             text-align: center;
+            position: relative;
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid white;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, #ecf0f1, #bdc3c7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            color: #7f8c8d;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
 
         .header h1 {
@@ -66,6 +82,17 @@
             padding: 8px 15px;
             border-radius: 20px;
             font-size: 0.9em;
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .contact-item a:hover {
+            opacity: 0.8;
+            text-decoration: underline;
         }
 
         .content {
@@ -253,6 +280,17 @@
             border-radius: 3px;
         }
 
+        .image-upload-note {
+            background: #e8f4fd;
+            border: 2px dashed #3498db;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            color: #2c3e50;
+            margin: 10px 0;
+            font-style: italic;
+        }
+
         @media (max-width: 768px) {
             .container {
                 margin: 10px;
@@ -273,24 +311,37 @@
             .contact-info {
                 grid-template-columns: 1fr;
             }
+
+            .profile-image {
+                width: 120px;
+                height: 120px;
+                font-size: 48px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
+            <div class="profile-image">
+                
+            </div>
+            <div class="image-upload-note">
+                📷 To add your profile photo: Replace the 👤 icon above with your image
+            </div>
+
             <h1>Dr. Malik Junaid Jami Gul</h1>
             <div class="title">Research Professor</div>
             <div class="institution">Department of Information & Communication Engineering<br>
                 Yeungnam University, South Korea</div>
 
             <div class="contact-info">
-                <div class="contact-item">📱 +82-10-3414-5603</div>
-                <div class="contact-item">✉️ drmalik@outlook.kr</div>
-                <div class="contact-item">✉️ drmalik@yu.ac.kr</div>
-                <div class="contact-item">🎓 440+ citations</div>
-                <div class="contact-item">🔗 LinkedIn Profile</div>
-                <div class="contact-item">🆔 ORCID: 0000-0002-2371-4829</div>
+                <div class="contact-item">📱 <a href="tel:+821034145603">+82-10-3414-5603</a></div>
+                <div class="contact-item">✉️ <a href="mailto:drmalik@outlook.kr">drmalik@outlook.kr</a></div>
+                <div class="contact-item">✉️ <a href="mailto:drmalik@yu.ac.kr">drmalik@yu.ac.kr</a></div>
+                <div class="contact-item">🎓 <a href="https://scholar.google.com/citations?user=zCQhwzwAAAAJ&hl=en" target="_blank">440+ citations</a></div>
+                <div class="contact-item">🔗 <a href="https://linkedin.com/in/malikjunaidgul" target="_blank">LinkedIn Profile</a></div>
+                <div class="contact-item">🆔 <a href="https://orcid.org/0000-0002-2371-4829" target="_blank">ORCID: 0000-0002-2371-4829</a></div>
             </div>
         </div>
 
@@ -301,7 +352,6 @@
 
                 <p>Strong record of leading collaborative research and development initiatives, publishing in high-impact venues, and delivering scalable prototypes and production deployments. Adept at quickly mastering new domains, mentoring teams, and translating cutting-edge research into actionable strategies and products that drive efficiency, security, and business value.</p>
             </section>
-
             <section class="section">
                 <h2>Education</h2>
 
@@ -405,6 +455,7 @@
                     </div>
                 </div>
             </section>
+
             <section class="section">
                 <h2>Selected Publications</h2>
                 <div class="publications">
@@ -435,7 +486,6 @@
                     </ol>
                 </div>
             </section>
-
             <section class="section">
                 <h2>Submitted Papers 2025</h2>
                 <div class="table-container">
@@ -563,6 +613,7 @@
                     </ul>
                 </div>
             </section>
+
             <section class="section">
                 <h2>Past Experience & Certificates</h2>
 
@@ -669,23 +720,37 @@
                         <h4 style="color: #2c3e50; margin-bottom: 10px;">Dr. Anand Paul</h4>
                         <p><strong>LSU Health Sciences Center New Orleans</strong><br>
                         Biostatistics & Data Science</p>
-                        <p><strong>Email:</strong> apaul4@lsuhsc.edu<br>
-                        <strong>Email:</strong> paul.editor@gmail.com</p>
+                        <p><strong>Email:</strong> <a href="mailto:apaul4@lsuhsc.edu">apaul4@lsuhsc.edu</a><br>
+                        <strong>Email:</strong> <a href="mailto:paul.editor@gmail.com">paul.editor@gmail.com</a></p>
                     </div>
 
                     <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; border-left: 4px solid #e74c3c;">
                         <h4 style="color: #2c3e50; margin-bottom: 10px;">Dr. Rabia Riaz</h4>
                         <p><strong>Assistant Professor</strong><br>
                         University of Azad Jammu & Kashmir</p>
-                        <p><strong>Email:</strong> rabiaiqbal18@gmail.com</p>
+                        <p><strong>Email:</strong> <a href="mailto:rabiaiqbal18@gmail.com">rabiaiqbal18@gmail.com</a></p>
                     </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Instructions for Adding Your Profile Photo</h2>
+                <div class="image-upload-note">
+                    <h3>How to Add Your Profile Image:</h3>
+                    <ol style="text-align: left; margin: 15px 0; padding-left: 20px;">
+                        <li>Save your profile photo as "profile.jpg" or "profile.png"</li>
+                        <li>In the HTML code, find the line: <code>&lt;div class="profile-image"&gt;👤&lt;/div&gt;</code></li>
+                        <li>Replace it with: <code>&lt;img src="profile.jpg" alt="Dr. Malik Junaid Jami Gul" class="profile-image" style="object-fit: cover;"&gt;</code></li>
+                        <li>Make sure your image file is in the same folder as this HTML file</li>
+                    </ol>
+                    <p><strong>Recommended:</strong> Use a professional headshot, square aspect ratio, minimum 300x300 pixels for best results.</p>
                 </div>
             </section>
         </div>
 
         <div style="background: #34495e; color: white; text-align: center; padding: 20px; font-size: 0.9em;">
             <p>© 2025 Dr. Malik Junaid Jami Gul - Research Professor at Yeungnam University</p>
-            <p style="margin-top: 10px; opacity: 0.8;">Generated from CV.pdf</p>
+            <p style="margin-top: 10px; opacity: 0.8;">Generated from CV.pdf • All links are functional • Profile image placeholder included</p>
         </div>
     </div>
 </body>

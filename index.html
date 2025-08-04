@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,29 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dr. Malik Junaid Jami Gul - CV</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
             font-family: 'Georgia', 'Times New Roman', serif;
-            line-height: 1.6;
-            color: #333;
             background-color: #f8f9fa;
+            margin: 0;
             padding: 20px;
+            color: #333;
         }
-
         .container {
             max-width: 900px;
             margin: 0 auto;
-            background: white;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            background: #fff;
+            box-shadow: 0 0 20px rgba(0,0,0,0.08);
             border-radius: 8px;
             overflow: hidden;
         }
-
         .header {
             background: linear-gradient(135deg, #2c3e50, #3498db);
             color: white;
@@ -36,707 +27,520 @@
             text-align: center;
             position: relative;
         }
-
         .profile-image {
             width: 150px;
             height: 150px;
             border-radius: 50%;
-            border: 5px solid white;
-            margin: 0 auto 20px;
-            background: linear-gradient(135deg, #ecf0f1, #bdc3c7);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 60px;
-            color: #7f8c8d;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            border: 5px solid #fff;
+            object-fit: cover;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.13);
+            display: inline-block;
+            margin-bottom: 20px;
         }
-
         .header h1 {
             font-size: 2.5em;
             margin-bottom: 10px;
             font-weight: 300;
         }
-
         .header .title {
             font-size: 1.3em;
             margin-bottom: 5px;
             font-weight: 300;
         }
-
         .header .institution {
             font-size: 1.1em;
             margin-bottom: 20px;
             opacity: 0.9;
         }
-
         .contact-info {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 10px;
             margin-top: 20px;
         }
-
         .contact-item {
-            background: rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.08);
             padding: 8px 15px;
             border-radius: 20px;
-            font-size: 0.9em;
+            font-size: 0.98em;
         }
-
         .contact-item a {
             color: white;
             text-decoration: none;
-            transition: opacity 0.3s;
         }
-
         .contact-item a:hover {
-            opacity: 0.8;
+            opacity: 0.7;
             text-decoration: underline;
         }
-
         .content {
             padding: 40px;
         }
-
         .section {
             margin-bottom: 35px;
         }
-
         .section h2 {
             color: #2c3e50;
             font-size: 1.8em;
-            margin-bottom: 20px;
-            padding-bottom: 8px;
             border-bottom: 3px solid #3498db;
-            font-weight: 400;
+            padding-bottom: 8px;
         }
-
-        .section h3 {
-            color: #34495e;
-            font-size: 1.3em;
-            margin: 15px 0 10px 0;
-            font-weight: 500;
-        }
-
-        .section h4 {
-            color: #34495e;
-            font-size: 1.1em;
-            margin: 10px 0 5px 0;
-            font-weight: 500;
-        }
-
         .education-item, .experience-item {
-            margin-bottom: 25px;
-            padding: 20px;
+            margin-bottom: 18px;
+            padding: 16px 18px;
             background: #f8f9fa;
             border-left: 4px solid #3498db;
             border-radius: 0 8px 8px 0;
         }
-
-        .degree {
-            font-weight: bold;
-            font-size: 1.2em;
-            color: #2c3e50;
-        }
-
-        .institution-name {
-            font-style: italic;
-            color: #7f8c8d;
-            margin: 5px 0;
-        }
-
+        .degree { font-weight: bold; color: #2c3e50; }
+        .institution-name { font-style: italic; color: #7f8c8d; }
         .year {
-            background: #3498db;
-            color: white;
-            padding: 3px 8px;
-            border-radius: 12px;
-            font-size: 0.9em;
-            display: inline-block;
-            margin: 5px 0;
+            background: #3498db; color: #fff;
+            padding: 3px 8px; border-radius: 12px;
+            font-size: 0.93em; margin: 5px 0; display: inline-block;
         }
-
-        .thesis-title {
-            font-weight: 500;
-            margin: 8px 0;
-            line-height: 1.4;
-        }
-
-        .supervisor {
-            font-size: 0.95em;
-            color: #666;
-        }
-
-        .gpa {
-            font-weight: 500;
-            color: #27ae60;
-        }
-
+        .supervisor { font-size: 0.99em; color: #666; }
+        .gpa { font-weight: 500; color: #27ae60;}
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
         }
-
         .skill-category {
             background: #f8f9fa;
             padding: 20px;
             border-radius: 8px;
             border-left: 4px solid #e74c3c;
         }
-
-        .skill-category h4 {
-            color: #e74c3c;
-            margin-bottom: 10px;
-        }
-
-        .publications ol {
-            counter-reset: pub-counter;
-            list-style: none;
-        }
-
+        .skill-category h4 { color: #e74c3c; }
+        .publications ol { counter-reset: pub-counter; list-style: none; }
         .publications li {
             counter-increment: pub-counter;
-            margin: 15px 0;
-            padding: 15px;
+            margin: 13px 0;
+            padding: 15px 0 15px 46px;
             background: #f8f9fa;
             border-radius: 8px;
             position: relative;
-            padding-left: 50px;
         }
-
         .publications li::before {
             content: counter(pub-counter);
-            position: absolute;
-            left: 15px;
-            top: 15px;
-            background: #e74c3c;
-            color: white;
-            width: 25px;
-            height: 25px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 0.9em;
+            position: absolute; left: 12px; top: 50%;
+            background: #e74c3c; color: #fff;
+            width: 25px; height: 25px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: bold; font-size: 1em; transform: translateY(-50%);
         }
-
         .project-item {
-            margin: 15px 0;
-            padding: 15px;
-            background: #f8f9fa;
-            border-radius: 8px;
+            margin: 11px 0; padding: 10px 16px;
+            background: #f8f9fa; border-radius: 8px;
             border-left: 4px solid #f39c12;
         }
-
-        .project-title {
-            font-weight: bold;
-            color: #f39c12;
-            margin-bottom: 8px;
-        }
-
+        .project-title { font-weight: bold; color: #f39c12; }
         .table-container {
-            overflow-x: auto;
-            margin: 20px 0;
+            overflow-x: auto; margin: 20px 0;
         }
-
         table {
-            width: 100%;
-            border-collapse: collapse;
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            width: 100%; border-collapse: collapse;
+            background: #fff; border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
-
         th, td {
             padding: 12px 15px;
             text-align: left;
             border-bottom: 1px solid #ddd;
         }
-
-        th {
-            background: #34495e;
-            color: white;
-            font-weight: 500;
-        }
-
-        tr:hover {
-            background: #f5f5f5;
-        }
-
-        ul {
-            margin: 10px 0 10px 20px;
-        }
-
-        li {
-            margin: 5px 0;
-        }
-
+        th { background: #34495e; color: #fff; }
+        tr:hover { background: #f5f5f5 }
+        ul { margin: 11px 0 11px 24px;}
+        li { margin: 3px 0; }
         .highlight {
             background: #fff3cd;
             padding: 2px 4px;
             border-radius: 3px;
         }
-
-        .image-upload-note {
-            background: #e8f4fd;
-            border: 2px dashed #3498db;
-            padding: 15px;
-            border-radius: 8px;
-            text-align: center;
-            color: #2c3e50;
-            margin: 10px 0;
-            font-style: italic;
-        }
-
         @media (max-width: 768px) {
-            .container {
-                margin: 10px;
-            }
-
-            .content {
-                padding: 20px;
-            }
-
-            .header {
-                padding: 30px 20px;
-            }
-
-            .header h1 {
-                font-size: 2em;
-            }
-
-            .contact-info {
-                grid-template-columns: 1fr;
-            }
-
-            .profile-image {
-                width: 120px;
-                height: 120px;
-                font-size: 48px;
-            }
+            .container { margin: 8px; }
+            .content { padding: 20px; }
+            .header { padding: 30px 8px; }
+            .header h1 { font-size: 2em; }
+            .profile-image { width: 110px; height: 110px; }
+            .skills-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <div class="profile-image">
-                 <img src="My image.jpg" alt="Dr. Malik Junaid Jami Gul" class="profile-image" style="object-fit: cover; width: 100%; height: 100%;">
-            </div>
-          
-            <h1>Dr. Malik Junaid Jami Gul</h1>
-            <div class="title">Research Professor</div>
-            <div class="institution">Department of Information & Communication Engineering<br>
-                Yeungnam University, South Korea</div>
+<div class="container">
+    <div class="header">
+        <img src="Myimage.jpg" alt="Dr. Malik Junaid Jami Gul" class="profile-image">
 
-            <div class="contact-info">
-                <div class="contact-item">📱 <a href="tel:+821034145603">+82-10-3414-5603</a></div>
-                <div class="contact-item">✉️ <a href="mailto:drmalik@outlook.kr">drmalik@outlook.kr</a></div>
-                <div class="contact-item">✉️ <a href="mailto:drmalik@yu.ac.kr">drmalik@yu.ac.kr</a></div>
-                <div class="contact-item">🎓 <a href="https://scholar.google.com/citations?user=zCQhwzwAAAAJ&hl=en" target="_blank">440+ citations</a></div>
-                <div class="contact-item">🔗 <a href="https://linkedin.com/in/malikjunaidgul" target="_blank">LinkedIn Profile</a></div>
-                <div class="contact-item">🆔 <a href="https://orcid.org/0000-0002-2371-4829" target="_blank">ORCID: 0000-0002-2371-4829</a></div>
-            </div>
-        </div>
-
-        <div class="content">
-            <section class="section">
-                <h2>Summary</h2>
-                <p>Accomplished technology professional with multidisciplinary expertise spanning <span class="highlight">Artificial Intelligence</span>, <span class="highlight">Machine Learning</span>, <span class="highlight">Blockchain</span>, <span class="highlight">Internet of Things</span>, and <span class="highlight">Software Engineering</span>. Proven ability to design and implement innovative solutions from large language and generative models to secure, decentralized systems and edge-computing architectures across diverse industries including healthcare, finance, logistics, and energy.</p>
-
-                <p>Strong record of leading collaborative research and development initiatives, publishing in high-impact venues, and delivering scalable prototypes and production deployments. Adept at quickly mastering new domains, mentoring teams, and translating cutting-edge research into actionable strategies and products that drive efficiency, security, and business value.</p>
-            </section>
-            <section class="section">
-                <h2>Education</h2>
-
-                <div class="education-item">
-                    <div class="degree">Ph.D.</div>
-                    <div class="institution-name">Kyungpook National University, Daegu, South Korea</div>
-                    <div class="year">2021</div>
-                    <div class="thesis-title">Axiom Blockchain Architecture with Extended Framework for Network and Miner Layer</div>
-                    <div class="supervisor">Supervisor: Dr. Anand Paul</div>
-                    <div class="gpa">GPA: 3.87/4.3</div>
-                </div>
-
-                <div class="education-item">
-                    <div class="degree">M.Phil.</div>
-                    <div class="institution-name">University of Azad Jammu & Kashmir, Muzaffarabad</div>
-                    <div class="year">2013</div>
-                    <div class="thesis-title">Security Analysis of Windows and Linux Operating System using Live Device Attacks</div>
-                    <div class="supervisor">Supervisor: Dr. Saeed Arif Shah</div>
-                    <div class="gpa">GPA: 3.35/4.00</div>
-                </div>
-
-                <div class="education-item">
-                    <div class="degree">B.S.</div>
-                    <div class="institution-name">University of Azad Jammu & Kashmir, Muzaffarabad</div>
-                    <div class="year">2011</div>
-                    <div class="thesis-title">Optimal Sensor Placement for Detection Against Distributed Denial of Service Attack</div>
-                    <div class="supervisor">Supervisor: Dr. Rabia Riaz</div>
-                    <div class="gpa">GPA: 3.14/4.00</div>
-                </div>
-            </section>
-
-            <section class="section">
-                <h2>Recent Professional Experience</h2>
-
-                <div class="experience-item">
-                    <h3>Research Professor, Yeungnam University (March 2022 – Present)</h3>
-                    <ul>
-                        <li>Lead research in AI, Blockchain, and IoT</li>
-                        <li>Supervise graduate students</li>
-                        <li>Conduct and create lectures for Reinforcement Learning, Machine Learning, Blockchain & Security for spring semester 2025</li>
-                        <li>Engage in international and interdisciplinary research collaborations</li>
-                    </ul>
-                </div>
-
-                <div class="experience-item">
-                    <h3>PhD Scholar / Research Assistant, Kyungpook National University (2017-2021)</h3>
-                </div>
-
-                <div class="experience-item">
-                    <h3>Visiting Lecturer, Multiple Universities (2013-2017)</h3>
-                </div>
-            </section>
-
-            <section class="section">
-                <h2>Research Interests</h2>
-
-                <h3>Foundations of Next-Generation AI</h3>
-                <p>Large Language Models (LLMs) and sparse expert architectures underpin the next wave of intelligent systems, enabling self-supervised and few-shot learning across diverse tasks. Vision-language models deliver seamless multimodal understanding, while explainable and trustworthy AI ensures transparency and alignment with human values.</p>
-
-                <h3>Secure, Privacy-Preserving Systems</h3>
-                <p>Federated and encrypted learning frameworks protect data on IoT devices, complemented by zero-trust architectures and blockchain-based protocols that fortify distributed systems. Research in adversarial robustness safeguards model integrity against evolving threats.</p>
-
-                <h3>Advanced Image Processing & Computer Vision</h3>
-                <p>Generative Adversarial Networks and diffusion models drive high-fidelity image synthesis, while vision transformers and hybrid CNN-transformer architectures excel in tasks from super-resolution and 3D reconstruction to low-light enhancement. Real-time video analytics and explainable CV techniques, including deepfake detection, enable trustworthy autonomous perception.</p>
-
-                <h4>Future Research Focus</h4>
-                <p>Over the next few years, focus will center on architecting and optimizing large-scale multimodal transformers and sparse-expert large language models. Integrating vision-language frameworks with GAN and diffusion-based super-resolution and 3D reconstruction modules. Developing zero-trust, blockchain-anchored architectures to secure decentralized digital twins in smart cities. Designing multi-agent deep reinforcement learning systems with temporal-attention mechanisms for adaptive traffic and energy grid control all underpinned by neuromorphic and quantum-classical hybrid compute paradigms to achieve ultra-low-latency, energy-efficient AI.</p>
-            </section>
-
-            <section class="section">
-                <h2>Technical Skills</h2>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h4>Programming & Software Development</h4>
-                        <p>Advanced proficiency in Python (NumPy, Pandas), C++, Java, C#, Scala, JavaScript, and PHP with extensive experience building research prototypes, simulation tools, and scholarly software libraries. Familiar with GPU programming (CUDA), optimizing compute-intensive simulations and neural network training workflows.</p>
-                    </div>
-
-                    <div class="skill-category">
-                        <h4>Machine Learning & AI Frameworks</h4>
-                        <p>Expertise in TensorFlow, Keras, PyTorch, Scikit-learn, OpenAI Gym, and Hugging Face Transformers for developing and evaluating deep learning architectures, including CNNs, RNNs, and Transformer-based models.</p>
-                    </div>
-
-                    <div class="skill-category">
-                        <h4>Big Data & Data Engineering</h4>
-                        <p>Skilled in Apache Spark (Scala, PySpark) and Hadoop for large-scale data processing, alongside SQL (MySQL, SQL Server) for relational data management and complex query optimization.</p>
-                    </div>
-
-                    <div class="skill-category">
-                        <h4>Blockchain & Decentralized Systems</h4>
-                        <p>In-depth knowledge of Hyperledger Fabric and Ethereum (Solidity), with practical implementation of smart contracts, permissioned ledgers, and IPFS-based off-chain storage.</p>
-                    </div>
-
-                    <div class="skill-category">
-                        <h4>Internet of Things & Edge Computing</h4>
-                        <p>Experienced in embedded platforms (Raspberry Pi, Arduino), with federated learning pipelines optimized for resource-constrained IoT devices.</p>
-                    </div>
-
-                    <div class="skill-category">
-                        <h4>Visualization & Scientific Communication</h4>
-                        <p>Skilled in Matplotlib, Seaborn, Plotly, and LaTeX typesetting for creating publication-quality figures, tables, and academic presentations.</p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="section">
-                <h2>Selected Publications</h2>
-                <div class="publications">
-                    <ol>
-                        <li>M.J. Jami Gul, G.M. Urfa, A. Paul, <strong>Machine Learning-Based Water Need Estimation for Smart Irrigation System</strong>, Blockchain Technologies, pp. 437-447, 2024.</li>
-
-                        <li>M.J. Jami Gul, M.U. Gul, A. Paul, <strong>Adversarial Networks for Blockchain Attack Classification</strong>, Proc. Comput. Sci. Eng. Conf., 2023.</li>
-
-                        <li>F. Saeed, M.J. Jami Gul, A. Paul et al., <strong>A Robust Approach for Industrial Small-Object Detection using Improved Faster R-CNN</strong>, Sci. Rep., vol. 11, art. no. 18015, 2023.</li>
-
-                        <li>M.J. Jami Gul, M.H. Firmansyah, S. Rho, A. Paul, <strong>Bi-LSTM-LSTM Based Time Series Electricity Consumption Forecast for South Korea</strong>, in Principles Data Sci., pp. 895-903, 2023.</li>
-
-                        <li>J.A. Daniel, S. Rajendran, P. Pranam, Y. Berry, A. Sreedharan, M.J. Jami Gul, A. Paul, <strong>Blockchain Technologies: Smart Contracts for Consumer Electronics Data Sharing and Secure Payment</strong>, Electronics, vol. 12, no. 1, art. no. 0208, 2022.</li>
-
-                        <li>M.M.U. Rathore, M.J. Jami Gul, A. Paul et al., <strong>Multilevel Graph-Based Decision Making in Big Scholarly Data</strong>, IEEE Trans. Emerg. Topics Comput., vol. 9, no. 1, pp. 280-292, 2021.</li>
-
-                        <li>M.J. Jami Gul, B. Subramanian, A. Paul, J. Kim, <strong>Blockchain for Public Health Care in Smart Society</strong>, Microprocess. Microsyst., vol. 81, 2021.</li>
-
-                        <li>A. Balasubramaniam, M.J. Jami Gul, V.G. Menon, A. Paul, <strong>Blockchain for Intelligent Transport System</strong>, IETE Tech. Rev., vol. 38, no. 4, pp. 438-449, 2021.</li>
-
-                        <li>A. Ganesan, A. Paul, G. Nagabushnam, M.J. Jami Gul, M. Jakovljevic, <strong>Human-in-the-Loop Predictive Analytics Using Statistical Learning</strong>, J. Healthc. Eng., 2021.</li>
-
-                        <li>M.J. Jami Gul, G.M. Urfa, A. Paul, J. Moon, S. Rho, E. Hwang, <strong>Mid-term Electricity Load Prediction using CNN and Bi-LSTM</strong>, J. Supercomput., vol. 77, no. 10, pp. 10942-10958, 2021.</li>
-
-                        <li>M.J. Jami Gul, A. Paul, S. Rho, M. Kim, <strong>Blockchain-based Healthcare System with Artificial Intelligence</strong>, in Proc. Comput. Sci. Comput. Intell. CSCI, pp. 740-741, 2020.</li>
-
-                        <li>A. Gul, R. Rehman, A. Paul, S. Rho, R. Riaz, J. Kim, <strong>Blockchain Expansion to Secure Assets with Fog Node on Special Duty</strong>, Soft Comput., vol. 24, no. 15, pp. 11245-11257, 2020.</li>
-                    </ol>
-                </div>
-            </section>
-            <section class="section">
-                <h2>Submitted Papers 2025</h2>
-                <div class="table-container">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Journal</th>
-                                <th>Title</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>IEEE Access</td>
-                                <td>Evaluating Heuristic and Reinforcement Learning Emission Control Strategies in Blockchain Networks under Single- and Multi-Objective Reward Frameworks</td>
-                                <td><span style="background: #f39c12; color: white; padding: 2px 8px; border-radius: 12px; font-size: 0.8em;">Under Review</span></td>
-                            </tr>
-                            <tr>
-                                <td>IEEE Access</td>
-                                <td>Queue-Aware Deep Reinforcement Learning for Dynamic Relayer Optimization in Cross-Chain Blockchain Networks</td>
-                                <td><span style="background: #f39c12; color: white; padding: 2px 8px; border-radius: 12px; font-size: 0.8em;">Under Review</span></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
-
-            <section class="section">
-                <h2>Future Submissions 2025</h2>
-                <div class="table-container">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Status</th>
-                                <th>Prospective Title</th>
-                                <th>Journal</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><span style="background: #27ae60; color: white; padding: 2px 8px; border-radius: 12px; font-size: 0.8em;">Ready for Submission</span></td>
-                                <td>SHAP-Driven Ensemble Modeling</td>
-                                <td>Not Decided</td>
-                            </tr>
-                            <tr>
-                                <td><span style="background: #27ae60; color: white; padding: 2px 8px; border-radius: 12px; font-size: 0.8em;">Ready for Submission</span></td>
-                                <td>Heterogeneous Data Analysis</td>
-                                <td>IEEE-TNSE</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
-
-            <section class="section">
-                <h2>Projects</h2>
-
-                <div class="project-item">
-                    <div class="project-title">🔗 Blockchain Ecosystem Simulations</div>
-                    <ul>
-                        <li>Developed simulation models of blockchain network behavior, consensus latency, and fork rates</li>
-                        <li>Implemented in Python and SimPy; visualized results with Matplotlib</li>
-                    </ul>
-                </div>
-
-                <div class="project-item">
-                    <div class="project-title">⚡ Electricity Consumption Prediction for South Korea</div>
-                    <ul>
-                        <li>Collaborated with Korea University to forecast national power demand using ARIMA and LSTM models</li>
-                        <li>Cleaned and processed multi-year load data; achieved MAPE < 5%</li>
-                    </ul>
-                </div>
-
-                <div class="project-item">
-                    <div class="project-title">🛡️ Optimal Guard Node Placement Using SGLD & Energy Factor</div>
-                    <ul>
-                        <li>Formulated guard-node placement as energy-aware sampling using Stochastic Gradient Langevin Dynamics</li>
-                        <li>Implemented algorithm in MATLAB; compared energy budgets across topologies</li>
-                    </ul>
-                </div>
-
-                <div class="project-item">
-                    <div class="project-title">🔍 Optimal Sensor Placement for DDoS Detection (B.Sc. Thesis, UAJK)</div>
-                    <ul>
-                        <li>Modeled network as graph; selected sensor locations to maximize coverage against DDoS flow</li>
-                        <li>Solved via greedy heuristics; validated on real ISP topologies</li>
-                    </ul>
-                </div>
-
-                <div class="project-item">
-                    <div class="project-title">📊 HEC Scholarship Data Automation (Semester Project)</div>
-                    <ul>
-                        <li>Conducted full system analysis and UML design; implemented front end and business logic in C#</li>
-                        <li>Integrated MySQL backend; generated reports and automated notifications</li>
-                    </ul>
-                </div>
-
-                <div class="project-item">
-                    <div class="project-title">🌐 Sockets (Semester Project)</div>
-                    <ul>
-                        <li>Implemented TCP and UDP socket communication on Fedora Linux under VMware</li>
-                        <li>C/C++ code for client-server file transfer and chat application</li>
-                    </ul>
-                </div>
-
-                <div class="project-item">
-                    <div class="project-title">🏦 NBP Database (Semester Project)</div>
-                    <ul>
-                        <li>Designed and implemented banking database in MS Access/SQL Server</li>
-                        <li>C# GUI for account management, transactions, and report generation</li>
-                    </ul>
-                </div>
-
-                <div class="project-item">
-                    <div class="project-title">📱 Android Permissions (M.Phil. Project)</div>
-                    <ul>
-                        <li>Analyzed Android app permissions model; built prototype in C# and ported to Java for mobile deployment</li>
-                    </ul>
-                </div>
-
-                <div class="project-item">
-                    <div class="project-title">🔐 Windows Registry Analysis (M.Phil. Project)</div>
-                    <ul>
-                        <li>Developed C# tool to parse and analyze Windows Registry hives for forensic indicators</li>
-                    </ul>
-                </div>
-            </section>
-
-            <section class="section">
-                <h2>Past Experience & Certificates</h2>
-
-                <h3>Teaching Experience</h3>
-                <ul>
-                    <li><strong>Visiting Lecturer, University of Azad Jammu & Kashmir (2012):</strong> Web Development, OOP, Algorithms, Database</li>
-                    <li><strong>Visiting Lecturer, Mohi-ud-din University (2013-2017):</strong> Computer Networks, Web Development, Database</li>
-                    <li><strong>Exam Superintendent, Virtual University Online Exams (2015-2017)</strong></li>
-                    <li><strong>Thesis Supervisor, M.Sc. Students, Virtual University (2016-2017)</strong></li>
-                    <li><strong>Teaching Assistant, UAJK Software Engineering (Fall 2012):</strong> Networks & Communications, Semester VI</li>
-                    <li><strong>Teacher, Bait-ul-Mamoor High School (2010-2012)</strong></li>
-                </ul>
-
-                <h3>Development Experience</h3>
-                <ul>
-                    <li><strong>Web Developer & Network Admin, Kashmir Institute of Management (2015):</strong> kim.gok.pk; listed on AJK Govt portal</li>
-                    <li><strong>Intern, Moon Creation (12 weeks):</strong> built websites for AJK social and blogging platforms</li>
-                </ul>
-
-                <h3>Certifications & Editorial</h3>
-                <ul>
-                    <li>Editor, Weekly Musheer Newspaper</li>
-                    <li>Software Course Certificate, TIPS</li>
-                    <li>Joomla, Drupal, WordPress, Magento Web Development</li>
-                    <li>Microsoft Windows/Server 30-day Online Study Plan</li>
-                </ul>
-            </section>
-
-            <section class="section">
-                <h2>Editorial, Peer Review, and Professional Service</h2>
-                <ul>
-                    <li>Guest Editor, <strong>Electronics (MDPI)</strong> on Big Data Analytics (2023)</li>
-                    <li>Conferences chair for Local and International events</li>
-                    <li>Peer reviewer for <strong>IEEE IoT Journal</strong>, <strong>IEEE Trans. Eng. Management</strong>, and others</li>
-                </ul>
-            </section>
-
-            <section class="section">
-                <h2>Workshops & Seminars</h2>
-                <ul>
-                    <li>Two-day international webinar on <strong>Data Analytics and Business Processes</strong> - Avinashilingam Institute of Home Science and Higher Education for Women</li>
-                    <li>Four-day workshop on <strong>Active Citizen</strong> in collaboration with British Council, Children First & HRLC</li>
-                    <li>Session participant & committee member, <strong>UAJK International Conference on Kashmir in Emerging Global Perspectives</strong> - University of Azad Jammu & Kashmir, May 23-24, 2011</li>
-                    <li>Five-day training with <strong>NAVTCC</strong> on transitioning student learning environments in Pakistan from traditional to competency-based learning</li>
-                </ul>
-            </section>
-
-            <section class="section">
-                <h2>Awards & Recognition</h2>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px;">
-                    <div style="background: #e8f5e8; padding: 15px; border-radius: 8px; border-left: 4px solid #27ae60;">
-                        <strong>🎓 Honorary International Ambassador</strong><br>
-                        Kyungpook National University (2022)
-                    </div>
-                    <div style="background: #fff3cd; padding: 15px; border-radius: 8px; border-left: 4px solid #f39c12;">
-                        <strong>👑 Kings Scholarship Reward</strong><br>
-                        Kyungpook National University
-                    </div>
-                    <div style="background: #e3f2fd; padding: 15px; border-radius: 8px; border-left: 4px solid #2196f3;">
-                        <strong>💰 Incentive Reward</strong><br>
-                        Teaching and Publication from KNU and Yeungnam University
-                    </div>
-                    <div style="background: #f3e5f5; padding: 15px; border-radius: 8px; border-left: 4px solid #9c27b0;">
-                        <strong>🌟 Online Lectures</strong><br>
-                        Conducted for CHUNG-ANG University, South Korea
-                    </div>
-                    <div style="background: #ffebee; padding: 15px; border-radius: 8px; border-left: 4px solid #e91e63;">
-                        <strong>⚙️ Technical Team Member</strong><br>
-                        ICOT IEEE
-                    </div>
-                </div>
-            </section>
-
-            <section class="section">
-                <h2>Languages</h2>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
-                    <div style="text-align: center; padding: 20px; background: #f8f9fa; border-radius: 8px;">
-                        <div style="font-size: 2em; margin-bottom: 10px;">🇬🇧</div>
-                        <strong>English</strong><br>
-                        <span style="color: #27ae60;">Professional</span>
-                    </div>
-                    <div style="text-align: center; padding: 20px; background: #f8f9fa; border-radius: 8px;">
-                        <div style="font-size: 2em; margin-bottom: 10px;">🇵🇰</div>
-                        <strong>Urdu</strong><br>
-                        <span style="color: #2c3e50;">Native</span>
-                    </div>
-                    <div style="text-align: center; padding: 20px; background: #f8f9fa; border-radius: 8px;">
-                        <div style="font-size: 2em; margin-bottom: 10px;">🇵🇰</div>
-                        <strong>Punjabi</strong><br>
-                        <span style="color: #2c3e50;">Native</span>
-                    </div>
-                    <div style="text-align: center; padding: 20px; background: #f8f9fa; border-radius: 8px;">
-                        <div style="font-size: 2em; margin-bottom: 10px;">🇰🇷</div>
-                        <strong>Korean</strong><br>
-                        <span style="color: #f39c12;">Elementary (KIIP Level 3)</span>
-                    </div>
-                </div>
-            </section>
-
-            <section class="section">
-                <h2>References</h2>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 20px;">
-                    <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; border-left: 4px solid #3498db;">
-                        <h4 style="color: #2c3e50; margin-bottom: 10px;">Dr. Anand Paul</h4>
-                        <p><strong>LSU Health Sciences Center New Orleans</strong><br>
-                        Biostatistics & Data Science</p>
-                        <p><strong>Email:</strong> <a href="mailto:apaul4@lsuhsc.edu">apaul4@lsuhsc.edu</a><br>
-                        <strong>Email:</strong> <a href="mailto:paul.editor@gmail.com">paul.editor@gmail.com</a></p>
-                    </div>
-
-                    <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; border-left: 4px solid #e74c3c;">
-                        <h4 style="color: #2c3e50; margin-bottom: 10px;">Dr. Rabia Riaz</h4>
-                        <p><strong>Assistant Professor</strong><br>
-                        University of Azad Jammu & Kashmir</p>
-                        <p><strong>Email:</strong> <a href="mailto:rabiaiqbal18@gmail.com">rabiaiqbal18@gmail.com</a></p>
-                    </div>
-                </div>
-            </section>
-
-            
-        </div>
-
-        <div style="background: #34495e; color: white; text-align: center; padding: 20px; font-size: 0.9em;">
-            <p>© 2025 Dr. Malik Junaid Jami Gul - Research Professor at Yeungnam University</p>
-            <p style="margin-top: 10px; opacity: 0.8;">Generated from CV.pdf • All links are functional • Profile image placeholder included</p>
+        <h1>Dr. Malik Junaid Jami Gul</h1>
+        <div class="title">Research Professor</div>
+        <div class="institution">Department of Information & Communication Engineering<br>
+            Yeungnam University, South Korea</div>
+        <div class="contact-info">
+            <div class="contact-item">📱 <a href="tel:+821034145603">+82-10-3414-5603</a></div>
+            <div class="contact-item">✉️ <a href="mailto:drmalik@outlook.kr">drmalik@outlook.kr</a></div>
+            <div class="contact-item">✉️ <a href="mailto:drmalik@yu.ac.kr">drmalik@yu.ac.kr</a></div>
+            <div class="contact-item">🎓 <a href="https://scholar.google.com/citations?user=zCQhwzwAAAAJ&hl=en" target="_blank">440+ citations</a></div>
+            <div class="contact-item">🔗 <a href="https://linkedin.com/in/malikjunaidgul" target="_blank">LinkedIn Profile</a></div>
+            <div class="contact-item">🆔 <a href="https://orcid.org/0000-0002-2371-4829" target="_blank">ORCID: 0000-0002-2371-4829</a></div>
         </div>
     </div>
+
+    <div class="content">
+        <section class="section">
+            <h2>Summary</h2>
+            <p>Accomplished technology professional with multidisciplinary expertise spanning <span class="highlight">Artificial Intelligence</span>, <span class="highlight">Machine Learning</span>, <span class="highlight">Blockchain</span>, <span class="highlight">Internet of Things</span>, and <span class="highlight">Software Engineering</span>. Proven ability to design and implement innovative solutions from large language and generative models to secure, decentralized systems and edge-computing architectures across diverse industries including healthcare, finance, logistics, and energy.</p>
+            <p>Strong record of leading collaborative research and development initiatives, publishing in high-impact venues, and delivering scalable prototypes and production deployments. Adept at quickly mastering new domains, mentoring teams, and translating cutting-edge research into actionable strategies and products that drive efficiency, security, and business value.</p>
+        </section>
+
+        <section class="section">
+            <h2>Education</h2>
+            <div class="education-item">
+                <div class="degree">Ph.D.</div>
+                <div class="institution-name">Kyungpook National University, Daegu, South Korea</div>
+                <div class="year">2021</div>
+                <div class="thesis-title">Axiom Blockchain Architecture with Extended Framework for Network and Miner Layer</div>
+                <div class="supervisor">Supervisor: Dr. Anand Paul</div>
+                <div class="gpa">GPA: 3.87/4.3</div>
+            </div>
+            <div class="education-item">
+                <div class="degree">M.Phil.</div>
+                <div class="institution-name">University of Azad Jammu & Kashmir, Muzaffarabad</div>
+                <div class="year">2013</div>
+                <div class="thesis-title">Security Analysis of Windows and Linux Operating System using Live Device Attacks</div>
+                <div class="supervisor">Supervisor: Dr. Saeed Arif Shah</div>
+                <div class="gpa">GPA: 3.35/4.00</div>
+            </div>
+            <div class="education-item">
+                <div class="degree">B.S.</div>
+                <div class="institution-name">University of Azad Jammu & Kashmir, Muzaffarabad</div>
+                <div class="year">2011</div>
+                <div class="thesis-title">Optimal Sensor Placement for Detection Against Distributed Denial of Service Attack</div>
+                <div class="supervisor">Supervisor: Dr. Rabia Riaz</div>
+                <div class="gpa">GPA: 3.14/4.00</div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Recent Professional Experience</h2>
+            <div class="experience-item">
+                <h3>Research Professor, Yeungnam University (March 2022 – Present)</h3>
+                <ul>
+                    <li>Lead research in AI, Blockchain, and IoT</li>
+                    <li>Supervise graduate students</li>
+                    <li>Conduct and create lectures for Reinforcement Learning, Machine Learning, Blockchain & Security for spring semester 2025</li>
+                    <li>Engage in international and interdisciplinary research collaborations</li>
+                </ul>
+            </div>
+            <div class="experience-item">
+                <h3>PhD Scholar / Research Assistant, Kyungpook National University (2017-2021)</h3>
+            </div>
+            <div class="experience-item">
+                <h3>Visiting Lecturer, Multiple Universities (2013-2017)</h3>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Research Interests</h2>
+            <h3>Foundations of Next-Generation AI</h3>
+            <p>Large Language Models (LLMs) and sparse expert architectures underpin the next wave of intelligent systems, enabling self-supervised and few-shot learning across diverse tasks. Vision-language models deliver seamless multimodal understanding, while explainable and trustworthy AI ensures transparency and alignment with human values.</p>
+            <h3>Secure, Privacy-Preserving Systems</h3>
+            <p>Federated and encrypted learning frameworks protect data on IoT devices, complemented by zero-trust architectures and blockchain-based protocols that fortify distributed systems. Research in adversarial robustness safeguards model integrity against evolving threats.</p>
+            <h3>Advanced Image Processing & Computer Vision</h3>
+            <p>Generative Adversarial Networks and diffusion models drive high-fidelity image synthesis, while vision transformers and hybrid CNN-transformer architectures excel in tasks from super-resolution and 3D reconstruction to low-light enhancement. Real-time video analytics and explainable CV techniques, including deepfake detection, enable trustworthy autonomous perception.</p>
+            <h4>Future Research Focus</h4>
+            <p>Over the next few years, focus will center on architecting and optimizing large-scale multimodal transformers and sparse-expert large language models. Integrating vision-language frameworks with GAN and diffusion-based super-resolution and 3D reconstruction modules. Developing zero-trust, blockchain-anchored architectures to secure decentralized digital twins in smart cities. Designing multi-agent deep reinforcement learning systems with temporal-attention mechanisms for adaptive traffic and energy grid control all underpinned by neuromorphic and quantum-classical hybrid compute paradigms to achieve ultra-low-latency, energy-efficient AI.</p>
+        </section>
+
+        <section class="section">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>Programming & Software Development</h4>
+                    <p>Advanced proficiency in Python (NumPy, Pandas), C++, Java, C#, Scala, JavaScript, and PHP with extensive experience building research prototypes, simulation tools, and scholarly software libraries. Familiar with GPU programming (CUDA), optimizing compute-intensive simulations and neural network training workflows.</p>
+                </div>
+                <div class="skill-category">
+                    <h4>Machine Learning & AI Frameworks</h4>
+                    <p>Expertise in TensorFlow, Keras, PyTorch, Scikit-learn, OpenAI Gym, and Hugging Face Transformers for developing and evaluating deep learning architectures, including CNNs, RNNs, and Transformer-based models.</p>
+                </div>
+                <div class="skill-category">
+                    <h4>Big Data & Data Engineering</h4>
+                    <p>Skilled in Apache Spark (Scala, PySpark) and Hadoop for large-scale data processing, alongside SQL (MySQL, SQL Server) for relational data management and complex query optimization.</p>
+                </div>
+                <div class="skill-category">
+                    <h4>Blockchain & Decentralized Systems</h4>
+                    <p>In-depth knowledge of Hyperledger Fabric and Ethereum (Solidity), with practical implementation of smart contracts, permissioned ledgers, and IPFS-based off-chain storage.</p>
+                </div>
+                <div class="skill-category">
+                    <h4>Internet of Things & Edge Computing</h4>
+                    <p>Experienced in embedded platforms (Raspberry Pi, Arduino), with federated learning pipelines optimized for resource-constrained IoT devices.</p>
+                </div>
+                <div class="skill-category">
+                    <h4>Visualization & Scientific Communication</h4>
+                    <p>Skilled in Matplotlib, Seaborn, Plotly, and LaTeX typesetting for creating publication-quality figures, tables, and academic presentations.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Selected Publications</h2>
+            <div class="publications">
+                <ol>
+                    <li>M.J. Jami Gul, G.M. Urfa, A. Paul, <strong>Machine Learning-Based Water Need Estimation for Smart Irrigation System</strong>, Blockchain Technologies, pp. 437-447, 2024.</li>
+                    <li>M.J. Jami Gul, M.U. Gul, A. Paul, <strong>Adversarial Networks for Blockchain Attack Classification</strong>, Proc. Comput. Sci. Eng. Conf., 2023.</li>
+                    <li>F. Saeed, M.J. Jami Gul, A. Paul et al., <strong>A Robust Approach for Industrial Small-Object Detection using Improved Faster R-CNN</strong>, Sci. Rep., vol. 11, art. no. 18015, 2023.</li>
+                    <li>M.J. Jami Gul, M.H. Firmansyah, S. Rho, A. Paul, <strong>Bi-LSTM-LSTM Based Time Series Electricity Consumption Forecast for South Korea</strong>, in Principles Data Sci., pp. 895-903, 2023.</li>
+                    <li>J.A. Daniel, S. Rajendran, P. Pranam, Y. Berry, A. Sreedharan, M.J. Jami Gul, A. Paul, <strong>Blockchain Technologies: Smart Contracts for Consumer Electronics Data Sharing and Secure Payment</strong>, Electronics, vol. 12, no. 1, art. no. 0208, 2022.</li>
+                    <li>M.M.U. Rathore, M.J. Jami Gul, A. Paul et al., <strong>Multilevel Graph-Based Decision Making in Big Scholarly Data</strong>, IEEE Trans. Emerg. Topics Comput., vol. 9, no. 1, pp. 280-292, 2021.</li>
+                    <li>M.J. Jami Gul, B. Subramanian, A. Paul, J. Kim, <strong>Blockchain for Public Health Care in Smart Society</strong>, Microprocess. Microsyst., vol. 81, 2021.</li>
+                    <li>A. Balasubramaniam, M.J. Jami Gul, V.G. Menon, A. Paul, <strong>Blockchain for Intelligent Transport System</strong>, IETE Tech. Rev., vol. 38, no. 4, pp. 438-449, 2021.</li>
+                    <li>A. Ganesan, A. Paul, G. Nagabushnam, M.J. Jami Gul, M. Jakovljevic, <strong>Human-in-the-Loop Predictive Analytics Using Statistical Learning</strong>, J. Healthc. Eng., 2021.</li>
+                    <li>M.J. Jami Gul, G.M. Urfa, A. Paul, J. Moon, S. Rho, E. Hwang, <strong>Mid-term Electricity Load Prediction using CNN and Bi-LSTM</strong>, J. Supercomput., vol. 77, no. 10, pp. 10942-10958, 2021.</li>
+                    <li>M.J. Jami Gul, A. Paul, S. Rho, M. Kim, <strong>Blockchain-based Healthcare System with Artificial Intelligence</strong>, in Proc. Comput. Sci. Comput. Intell. CSCI, pp. 740-741, 2020.</li>
+                    <li>A. Gul, R. Rehman, A. Paul, S. Rho, R. Riaz, J. Kim, <strong>Blockchain Expansion to Secure Assets with Fog Node on Special Duty</strong>, Soft Comput., vol. 24, no. 15, pp. 11245-11257, 2020.</li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Submitted Papers 2025</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Journal</th>
+                            <th>Title</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>IEEE Access</td>
+                            <td>Evaluating Heuristic and Reinforcement Learning Emission Control Strategies in Blockchain Networks under Single- and Multi-Objective Reward Frameworks</td>
+                            <td><span style="background: #f39c12; color: white; padding: 2px 8px; border-radius: 12px; font-size: 0.8em;">Under Review</span></td>
+                        </tr>
+                        <tr>
+                            <td>IEEE Access</td>
+                            <td>Queue-Aware Deep Reinforcement Learning for Dynamic Relayer Optimization in Cross-Chain Blockchain Networks</td>
+                            <td><span style="background: #f39c12; color: white; padding: 2px 8px; border-radius: 12px; font-size: 0.8em;">Under Review</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Future Submissions 2025</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Status</th>
+                            <th>Prospective Title</th>
+                            <th>Journal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span style="background: #27ae60; color: white; padding: 2px 8px; border-radius: 12px; font-size: 0.8em;">Ready for Submission</span></td>
+                            <td>SHAP-Driven Ensemble Modeling</td>
+                            <td>Not Decided</td>
+                        </tr>
+                        <tr>
+                            <td><span style="background: #27ae60; color: white; padding: 2px 8px; border-radius: 12px; font-size: 0.8em;">Ready for Submission</span></td>
+                            <td>Heterogeneous Data Analysis</td>
+                            <td>IEEE-TNSE</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Projects</h2>
+            <div class="project-item">
+                <div class="project-title">🔗 Blockchain Ecosystem Simulations</div>
+                <ul>
+                    <li>Developed simulation models of blockchain network behavior, consensus latency, and fork rates</li>
+                    <li>Implemented in Python and SimPy; visualized results with Matplotlib</li>
+                </ul>
+            </div>
+            <div class="project-item">
+                <div class="project-title">⚡ Electricity Consumption Prediction for South Korea</div>
+                <ul>
+                    <li>Collaborated with Korea University to forecast national power demand using ARIMA and LSTM models</li>
+                    <li>Cleaned and processed multi-year load data; achieved MAPE &lt; 5%</li>
+                </ul>
+            </div>
+            <div class="project-item">
+                <div class="project-title">🛡️ Optimal Guard Node Placement Using SGLD & Energy Factor</div>
+                <ul>
+                    <li>Formulated guard-node placement as energy-aware sampling using Stochastic Gradient Langevin Dynamics</li>
+                    <li>Implemented algorithm in MATLAB; compared energy budgets across topologies</li>
+                </ul>
+            </div>
+            <div class="project-item">
+                <div class="project-title">🔍 Optimal Sensor Placement for DDoS Detection (B.Sc. Thesis, UAJK)</div>
+                <ul>
+                    <li>Modeled network as graph; selected sensor locations to maximize coverage against DDoS flow</li>
+                    <li>Solved via greedy heuristics; validated on real ISP topologies</li>
+                </ul>
+            </div>
+            <div class="project-item">
+                <div class="project-title">📊 HEC Scholarship Data Automation (Semester Project)</div>
+                <ul>
+                    <li>Conducted full system analysis and UML design; implemented front end and business logic in C#</li>
+                    <li>Integrated MySQL backend; generated reports and automated notifications</li>
+                </ul>
+            </div>
+            <div class="project-item">
+                <div class="project-title">🌐 Sockets (Semester Project)</div>
+                <ul>
+                    <li>Implemented TCP and UDP socket communication on Fedora Linux under VMware</li>
+                    <li>C/C++ code for client-server file transfer and chat application</li>
+                </ul>
+            </div>
+            <div class="project-item">
+                <div class="project-title">🏦 NBP Database (Semester Project)</div>
+                <ul>
+                    <li>Designed and implemented banking database in MS Access/SQL Server</li>
+                    <li>C# GUI for account management, transactions, and report generation</li>
+                </ul>
+            </div>
+            <div class="project-item">
+                <div class="project-title">📱 Android Permissions (M.Phil. Project)</div>
+                <ul>
+                    <li>Analyzed Android app permissions model; built prototype in C# and ported to Java for mobile deployment</li>
+                </ul>
+            </div>
+            <div class="project-item">
+                <div class="project-title">🔐 Windows Registry Analysis (M.Phil. Project)</div>
+                <ul>
+                    <li>Developed C# tool to parse and analyze Windows Registry hives for forensic indicators</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Past Experience & Certificates</h2>
+            <h3>Teaching Experience</h3>
+            <ul>
+                <li><strong>Visiting Lecturer, University of Azad Jammu & Kashmir (2012):</strong> Web Development, OOP, Algorithms, Database</li>
+                <li><strong>Visiting Lecturer, Mohi-ud-din University (2013-2017):</strong> Computer Networks, Web Development, Database</li>
+                <li><strong>Exam Superintendent, Virtual University Online Exams (2015-2017)</strong></li>
+                <li><strong>Thesis Supervisor, M.Sc. Students, Virtual University (2016-2017)</strong></li>
+                <li><strong>Teaching Assistant, UAJK Software Engineering (Fall 2012):</strong> Networks & Communications, Semester VI</li>
+                <li><strong>Teacher, Bait-ul-Mamoor High School (2010-2012)</strong></li>
+            </ul>
+            <h3>Development Experience</h3>
+            <ul>
+                <li><strong>Web Developer & Network Admin, Kashmir Institute of Management (2015):</strong> kim.gok.pk; listed on AJK Govt portal</li>
+                <li><strong>Intern, Moon Creation (12 weeks):</strong> built websites for AJK social and blogging platforms</li>
+            </ul>
+            <h3>Certifications & Editorial</h3>
+            <ul>
+                <li>Editor, Weekly Musheer Newspaper</li>
+                <li>Software Course Certificate, TIPS</li>
+                <li>Joomla, Drupal, WordPress, Magento Web Development</li>
+                <li>Microsoft Windows/Server 30-day Online Study Plan</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Editorial, Peer Review, and Professional Service</h2>
+            <ul>
+                <li>Guest Editor, <strong>Electronics (MDPI)</strong> on Big Data Analytics (2023)</li>
+                <li>Conferences chair for Local and International events</li>
+                <li>Peer reviewer for <strong>IEEE IoT Journal</strong>, <strong>IEEE Trans. Eng. Management</strong>, and others</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Workshops & Seminars</h2>
+            <ul>
+                <li>Two-day international webinar on <strong>Data Analytics and Business Processes</strong> - Avinashilingam Institute of Home Science and Higher Education for Women</li>
+                <li>Four-day workshop on <strong>Active Citizen</strong> in collaboration with British Council, Children First & HRLC</li>
+                <li>Session participant & committee member, <strong>UAJK International Conference on Kashmir in Emerging Global Perspectives</strong> - University of Azad Jammu & Kashmir, May 23-24, 2011</li>
+                <li>Five-day training with <strong>NAVTCC</strong> on transitioning student learning environments in Pakistan from traditional to competency-based learning</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Awards & Recognition</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px;">
+                <div style="background: #e8f5e8; padding: 15px; border-radius: 8px; border-left: 4px solid #27ae60;">
+                    <strong>🎓 Honorary International Ambassador</strong><br>
+                    Kyungpook National University (2022)
+                </div>
+                <div style="background: #fff3cd; padding: 15px; border-radius: 8px; border-left: 4px solid #f39c12;">
+                    <strong>👑 Kings Scholarship Reward</strong><br>
+                    Kyungpook National University
+                </div>
+                <div style="background: #e3f2fd; padding: 15px; border-radius: 8px; border-left: 4px solid #2196f3;">
+                    <strong>💰 Incentive Reward</strong><br>
+                    Teaching and Publication from KNU and Yeungnam University
+                </div>
+                <div style="background: #f3e5f5; padding: 15px; border-radius: 8px; border-left: 4px solid #9c27b0;">
+                    <strong>🌟 Online Lectures</strong><br>
+                    Conducted for CHUNG-ANG University, South Korea
+                </div>
+                <div style="background: #ffebee; padding: 15px; border-radius: 8px; border-left: 4px solid #e91e63;">
+                    <strong>⚙️ Technical Team Member</strong><br>
+                    ICOT IEEE
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Languages</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                <div style="text-align: center; padding: 20px; background: #f8f9fa; border-radius: 8px;">
+                    <div style="font-size: 2em; margin-bottom: 10px;">🇬🇧</div>
+                    <strong>English</strong><br>
+                    <span style="color: #27ae60;">Professional</span>
+                </div>
+                <div style="text-align: center; padding: 20px; background: #f8f9fa; border-radius: 8px;">
+                    <div style="font-size: 2em; margin-bottom: 10px;">🇵🇰</div>
+                    <strong>Urdu</strong><br>
+                    <span style="color: #2c3e50;">Native</span>
+                </div>
+                <div style="text-align: center; padding: 20px; background: #f8f9fa; border-radius: 8px;">
+                    <div style="font-size: 2em; margin-bottom: 10px;">🇵🇰</div>
+                    <strong>Punjabi</strong><br>
+                    <span style="color: #2c3e50;">Native</span>
+                </div>
+                <div style="text-align: center; padding: 20px; background: #f8f9fa; border-radius: 8px;">
+                    <div style="font-size: 2em; margin-bottom: 10px;">🇰🇷</div>
+                    <strong>Korean</strong><br>
+                    <span style="color: #f39c12;">Elementary (KIIP Level 3)</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>References</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 20px;">
+                <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; border-left: 4px solid #3498db;">
+                    <h4 style="color: #2c3e50; margin-bottom: 10px;">Dr. Anand Paul</h4>
+                    <p><strong>LSU Health Sciences Center New Orleans</strong><br>
+                    Biostatistics & Data Science</p>
+                    <p><strong>Email:</strong> <a href="mailto:apaul4@lsuhsc.edu">apaul4@lsuhsc.edu</a><br>
+                    <strong>Email:</strong> <a href="mailto:paul.editor@gmail.com">paul.editor@gmail.com</a></p>
+                </div>
+                <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; border-left: 4px solid #e74c3c;">
+                    <h4 style="color: #2c3e50; margin-bottom: 10px;">Dr. Rabia Riaz</h4>
+                    <p><strong>Assistant Professor</strong><br>
+                    University of Azad Jammu & Kashmir</p>
+                    <p><strong>Email:</strong> <a href="mailto:rabiaiqbal18@gmail.com">rabiaiqbal18@gmail.com</a></p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div style="background: #34495e; color: #fff; text-align: center; padding: 20px; font-size: 0.97em;">
+        <p>&copy; 2025 Dr. Malik Junaid Jami Gul - Research Professor at Yeungnam University</p>
+        <p style="margin-top: 7px; opacity: 0.8;">Generated from CV.pdf • All links are functional • Profile image included</p>
+    </div>
+</div>
 </body>
 </html>
